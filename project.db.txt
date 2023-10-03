@@ -1,0 +1,11 @@
+Table: 'athletes'
+
+CREATE TABLE 'athletes' ('id' INTEGER PRIMARY KEY NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL,'coach' TEXT NOT NULL );
+
+Table: 'coaches'
+
+CREATE TABLE 'coaches' ('id' INTEGER PRIMARY KEY NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL);
+
+Table: 'profile'
+
+CREATE TABLE 'profile' ('fullname' TEXT NOT NULL,'user_id' TEXT NOT NULL,'date_of_birth' TEXT NOT NULL,'school' TEXT NOT NULL,'age_group' TEXT NOT NULL,'coach' TEXT NOT NULL,'one_km' TEXT NOT NULL,'two_km' TEXT NOT NULL);

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Athlete Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Athlete Profile</h1>
+    <form method="POST" action="/editathleteform.html">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname">
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id">
+
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="text" id="date_of_birth" name="date_of_birth">
+
+        <label for="school">School:</label>
+        <input type="text" id="school" name="school">
+
+        <label for="age_group">Age Group:</label>
+        <input type="text" id="age_group" name="age_group">
+
+        <label for="coach">Coach:</label>
+        <input type="text" id="coach" name="coach">
+
+        <label for="two_km">2km PB:</label>
+        <input type="text" id="two_km" name="two_km">
+
+        <label for="one_km">1km PB:</label>
+        <input type="text" id="one_km" name="one_km">
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

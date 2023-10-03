@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rowing Coach Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .item {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            background-color: lightblue;
+            border-radius: 5px;
+        }
+
+        .item:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #divHome {
+            padding: 20px;
+            margin-top: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Welcome to The Athlete Management Portal</h1>
+
+    <div class="container">
+        <a href="logincoach.html" class="item">Login As Coach</a>
+        <a href="registercoach.html" class="item">Register Coach</a>
+        <a href="loginathlete.html" class="item">Login As Athlete</a>
+    </div>
+
+    <div id="divHome">
+        <h2>Latest News and Featured Stories</h2>
+        <div>
+            <!-- Add your content here -->
+            <p>Content goes here...</p>
+        </div>
+    </div>
+</body>
+
+</html>

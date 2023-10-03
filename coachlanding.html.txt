@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Landing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        /* ... existing styles ... */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: lightblue;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0px;
+        }
+
+        .navbar a {
+            margin-left: 20px;
+            color: grey;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            color: black;
+        }
+
+        .div-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        #div-banner {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #div-name-banner {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        aside {
+            flex: 1;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside h1 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        aside .profile-box {
+            border: 2px solid #007BFF;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        aside li {
+            margin-bottom: 10px;
+        }
+
+        aside li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 8px 16px;
+        }
+
+        aside li a:hover {
+            color: #007BFF;
+            background-color: #f1f1f1;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown button {
+            margin-left: 20px;
+            padding: 0px;
+            border: none;
+            background-color: lightblue;
+            color: grey;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .profile-block {
+            border: 4px solid lightblue;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            min-width: 200px; /* Set a minimum width for the blocks */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+
+        .profile-block a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Welcome Coach {{coachusername}}</h1>
+
+    <div class="navbar">
+        <a href="logout.html">Logout</a>
+        <a href="registerathlete.html">Register Athlete</a>
+        <div class="dropdown">
+            <button>Edit Athlete</button>
+            <div class="dropdown-content">
+                {% for username in athlete_usernames %}
+                    <a href="{{ url_for('editathleteform', username=username['username']) }}">{{ username['username'] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="div-container">
+        <section>
+            <aside>
+                <h1>Available Profiles</h1>
+                <div class="profile-grid">
+                    {% for username in athlete_usernames %}
+                        <div class="profile-block">
+                            <a href="{{ url_for('athletelanding', username=username['username']) }}">{{ username['username'] }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </aside>
+            <article>
+
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <p>FOOTER</p>
+    </footer>
+</body>
+
+</html>
